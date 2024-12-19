@@ -3,7 +3,7 @@
       driverClassName: com.mysql.jdbc.Driver
       url: jdbc:mysql://localhost:3306/ies
       username: root
-      password: Twister@123
+      password: Twister@1234
 
     jpa:
       hibernate:

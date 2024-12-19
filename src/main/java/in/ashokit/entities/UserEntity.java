@@ -20,14 +20,24 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Long userId;
+    private Integer userId;
     private String fullName;
     private String email;
     private String pwd;
-    public Long getUserId() {
+    private Long mobileNo;
+    private String gender;
+    private LocalDate dob;
+    private Long ssn;
+    private String accStatus;
+    private String activeSw;
+    private Integer roleId;
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    private List<PlanEntity> plans;
+    
+    public Integer getUserId() {
         return userId;
     }
-    public void setUserId(Long userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
     public String getFullName() {
@@ -96,14 +106,6 @@ public class UserEntity {
     public void setPlans(List<PlanEntity> plans) {
         this.plans = plans;
     }
-    private Long mobileNo;
-    private String gender;
-    private LocalDate dob;
-    private Long ssn;
-    private String accStatus;
-    private String activeSw;
-    private Integer roleId;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    private List<PlanEntity> plans;
+    
 
 }

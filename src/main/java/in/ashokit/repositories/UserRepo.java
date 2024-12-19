@@ -2,6 +2,8 @@ package in.ashokit.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<UserEntity, Long>{
+import in.ashokit.entities.UserEntity;
+
+public interface UserRepo extends JpaRepository<UserEntity, Integer>{
 
 }

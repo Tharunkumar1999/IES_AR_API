@@ -22,6 +22,11 @@ public class AppEntity {
 	private String gender;
 	private LocalDate dob;
 	private Long phno;
+    private Long ssn;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private UserEntity user;
+
 	public Long getCaseNum() {
         return caseNum;
     }
@@ -70,9 +75,5 @@ public class AppEntity {
     public void setUser(UserEntity user) {
         this.user = user;
     }
-    private Long ssn;
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private UserEntity user;
-
+ 
 }
